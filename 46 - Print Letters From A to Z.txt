@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+void PrintLettersFromAtoZ()
+{
+    for (char Letter = 'A'; Letter <= 'Z'; Letter++)
+    {
+        cout << Letter << endl;
+    }
+}
+
+int main()
+{
+    PrintLettersFromAtoZ();
+
+    return 0;
+}

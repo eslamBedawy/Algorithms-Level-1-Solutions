@@ -1,0 +1,55 @@
+#include <iostream>
+
+using namespace std;
+
+enum enPassOrFail { Pass = 1, Fail = 2 };
+
+void ReadNumbers(int& Num1, int& Num2, int& Num3)
+{
+    cout << "Please enter Number 1?\n";
+    cin >> Num1;
+
+    cout << "Please enter Number 2?\n";
+    cin >> Num2;
+
+    cout << "Please enter Number 3?\n";
+    cin >> Num3;
+}
+
+int SumOfNumbers(int Num1, int Num2, int Num3)
+{
+    return Num1 + Num2 + Num3;
+}
+
+float AverageOfThreeNumbers(int Num1, int Num2, int Num3)
+{
+    return SumOfNumbers(Num1, Num2, Num3) / 3.0;
+}
+
+enPassOrFail CheckAverage(float Average)
+{
+    if (Average >= 50)
+        return enPassOrFail::Pass;
+    else
+        return enPassOrFail::Fail;
+}
+
+void PrintResult(float Average)
+{
+    cout << "\nThe Average of Numbers is: " << Average << endl;
+
+    if (CheckAverage(Average) == enPassOrFail::Pass)
+        cout << "\n\tYou Passed\n";
+    else
+        cout << "\n\tYou Failed\n";
+}
+
+int main()
+{
+    int Num1, Num2, Num3;
+
+    ReadNumbers(Num1, Num2, Num3);
+    PrintResult(AverageOfThreeNumbers(Num1, Num2, Num3));
+
+    return 0;
+}

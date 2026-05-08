@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+float ReadRadius()
+{
+    float R;
+    cout << "Please Enter Radius R?\n";
+    cin >> R;
+
+    return R;
+}
+
+float CircleArea(float R)
+{
+    const float PI = 3.14f;
+
+    return PI * R * R;
+}
+
+void PrintResult(float Area)
+{
+    cout << "\nCircle Area: " << Area << endl;
+}
+
+int main()
+{
+    PrintResult(CircleArea(ReadRadius()));
+
+    return 0;
+}

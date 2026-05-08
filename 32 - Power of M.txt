@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+int ReadNumber()
+{
+    int Number;
+
+    cout << "Please enter Number?\n";
+    cin >> Number;
+
+    return Number;
+}
+
+int ReadPower()
+{
+    int M;
+
+    cout << "Please enter the Power?\n";
+    cin >> M;
+
+    return M;
+}
+
+int PowOf_M(int Number, int M)
+{
+    if (M == 0)
+        return 1;
+
+    int P = 1;
+
+    for (int i = 1; i <= M; i++)
+    {
+        P *= Number;
+    }
+
+    return P;
+}
+
+int main()
+{
+    int Number = ReadNumber();
+    int Power = ReadPower();
+
+    cout << PowOf_M(Number, Power);
+
+    return 0;
+}

@@ -1,0 +1,92 @@
+#include <iostream>
+
+using namespace std;
+
+enum enOddOrEven { Even = 1, Odd = 2 };
+
+int ReadNumber()
+{
+    int Number;
+
+    cout << "Please Enter Number?\n";
+    cin >> Number;
+
+    return Number;
+}
+
+enOddOrEven CheckOddOrEvenNumber(int N)
+{
+    if (N % 2 == 0)
+        return enOddOrEven::Even;
+    else
+        return enOddOrEven::Odd;
+}
+
+int SumEven_UsingWhile(int N)
+{
+    cout << "\nSum Even Numbers From 1 to N using While Loop:\n";
+
+    int Counter = 0;
+    int Sum = 0;
+
+    while (Counter < N)
+    {
+        Counter++;
+
+        if (CheckOddOrEvenNumber(Counter) == enOddOrEven::Even)
+        {
+            Sum += Counter;
+        }
+    }
+
+    return Sum;
+}
+
+int SumEven_UsingDoWhile(int N)
+{
+    cout << "\nSum Even Numbers From 1 to N using Do While Loop:\n";
+
+    int Counter = 0;
+    int Sum = 0;
+
+    do
+    {
+        Counter++;
+
+        if (CheckOddOrEvenNumber(Counter) == enOddOrEven::Even)
+        {
+            Sum += Counter;
+        }
+
+    } while (Counter < N);
+
+    return Sum;
+}
+
+int SumEven_UsingFor(int N)
+{
+    cout << "\nSum Even Numbers From 1 to N using For Loop:\n";
+
+    int Sum = 0;
+
+    for (int Counter = 1; Counter <= N; Counter++)
+    {
+        if (CheckOddOrEvenNumber(Counter) == enOddOrEven::Even)
+        {
+            Sum += Counter;
+        }
+    }
+
+    return Sum;
+}
+
+int main()
+{
+    int N = ReadNumber();
+
+    cout << "\nResult is: " << SumEven_UsingDoWhile(N);
+    cout << "\nResult is: " << SumEven_UsingWhile(N);
+    cout << "\nResult is: " << SumEven_UsingFor(N);
+
+    return 0;
+}

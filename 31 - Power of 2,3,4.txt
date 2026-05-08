@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int ReadNumber(string Message)
+{
+    int Number;
+
+    cout << Message << endl;
+    cin >> Number;
+
+    return Number;
+}
+
+void PrintPowersOf2_3_4(int Number)
+{
+    int A = Number * Number;
+    int B = Number * Number * Number;
+    int C = Number * Number * Number * Number;
+
+    cout << A << " " << B << " " << C << endl;
+}
+
+int main()
+{
+    PrintPowersOf2_3_4(ReadNumber("Please enter Number?"));
+
+    return 0;
+}

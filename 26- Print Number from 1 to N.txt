@@ -1,0 +1,60 @@
+#include <iostream>
+
+using namespace std;
+
+int ReadNumber()
+{
+    int Number;
+    cout << "Please Enter Number?\n";
+    cin >> Number;
+
+    return Number;
+}
+
+void PrintRangeFrom1ToN_UsingWhile(int N)
+{
+    cout << "\nPrint Range From 1 to N using While Loop:\n";
+
+    int Counter = 0;
+
+    while (Counter < N)
+    {
+        Counter++;
+        cout << Counter << endl;
+    }
+}
+
+void PrintRangeFrom1ToN_UsingDoWhile(int N)
+{
+    cout << "\nPrint Range From 1 to N using Do While Loop:\n";
+
+    int Counter = 0;
+
+    do
+    {
+        Counter++;
+        cout << Counter << endl;
+
+    } while (Counter < N);
+}
+
+void PrintRangeFrom1ToN_UsingForLoop(int N)
+{
+    cout << "\nPrint Range From 1 to N using For Loop:\n";
+
+    for (int Counter = 1; Counter <= N; Counter++)
+    {
+        cout << Counter << endl;
+    }
+}
+
+int main()
+{
+    int N = ReadNumber();
+
+    PrintRangeFrom1ToN_UsingWhile(N);
+    PrintRangeFrom1ToN_UsingDoWhile(N);
+    PrintRangeFrom1ToN_UsingForLoop(N);
+
+    return 0;
+}
